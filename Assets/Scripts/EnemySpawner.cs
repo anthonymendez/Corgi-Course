@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentTimeDelayBetweenEnemySpawning = 0;
+        enemyGroup = GameObject.FindWithTag("ActiveEnemy").transform;
     }
 	
 	// Update is called once per frame
@@ -22,8 +23,8 @@ public class EnemySpawner : MonoBehaviour {
         if (currentTimeDelayBetweenEnemySpawning >= timeDelayBetweenEnemySpawning) {
             currentTimeDelayBetweenEnemySpawning = 0;
             GameObject newEnemy = enemyPool.GetGameObject();
-            newEnemy.transform.position = transform.position;
             newEnemy.transform.parent = enemyGroup;
+            newEnemy.transform.position = transform.position;
         }
 	}
 }
