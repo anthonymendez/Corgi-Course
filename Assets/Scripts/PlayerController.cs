@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float jumpPower;
+
+    public GameController gameController;
     
     bool isGround;
     Rigidbody2D physicsBody;
@@ -19,12 +21,24 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool jumpButton = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
-        if (GameController.inGame && isGround && jumpButton) {
+        if (GameController.inGame && !GameController.isPaused && isGround && jumpButton) {
             physicsBody.AddForce(Vector3.up * jumpPower * physicsBody.gravityScale * 100f);
+        }
+
+        bool pauseButton = Input.GetKeyDown(KeyCode.Escape);
+        if (pauseButton) {
+            gameController.TogglePause();
+        }
+
+        if (GameController.isPaused) {
+            playerAnimator.updateMode = AnimatorUpdateMode.Normal;
+        } else {
+            playerAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         }
         
         playerAnimator.SetBool("isGround", isGround);
         playerAnimator.SetBool("inGame", GameController.inGame);
+        playerAnimator.SetBool("isDead", GameController.isDead);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
