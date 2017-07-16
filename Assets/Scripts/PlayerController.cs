@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public float jumpPower;
 
-    public bool isGround;
+    bool isGround;
     Rigidbody2D physicsBody;
 
 	// Use this for initialization
