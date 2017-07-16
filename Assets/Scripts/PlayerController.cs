@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool jumpButton = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
-        if (isGround && jumpButton) {
+        if (GameController.inGame && isGround && jumpButton) {
             physicsBody.AddForce(Vector3.up * jumpPower * physicsBody.gravityScale * 100f);
         }
         
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (collision.gameObject.CompareTag("Enemy")) {
-            GameController.inGame = false;
+            GameController.isDead = true;
         }
     }
 

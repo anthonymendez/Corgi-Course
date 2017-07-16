@@ -16,7 +16,7 @@ public class GroundController : MonoBehaviour {
             thisR.sortingOrder = 2;
             leftSR.sortingOrder = 1;
             rightSR.sortingOrder = 0;
-            transform.position = new Vector3(transform.position.x+(3*4.35800f), transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x+(3*4.06f), transform.position.y, transform.position.z);
         }
     }
 }
