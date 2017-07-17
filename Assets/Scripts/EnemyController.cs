@@ -11,13 +11,16 @@ public class EnemyController : MonoBehaviour {
     public GameObjectPool enemyPool;
 
     bool isGround;
+    bool passedPlayer, scoreGiven;
     Rigidbody2D physicsBody;
     float currentDelayBetweenJumps;
     Animator enemyAnimator;
     Transform temp;
+    AudioSource jumpCompletedAudio;
 
     // Use this for initialization
     void Start() {
+        jumpCompletedAudio = GetComponent<AudioSource>();
         physicsBody = GetComponent<Rigidbody2D>();
         currentDelayBetweenJumps = 0;
         enemyAnimator = GetComponent<Animator>();
@@ -33,11 +36,29 @@ public class EnemyController : MonoBehaviour {
             currentDelayBetweenJumps = 0;
         }
 
+        if (transform.position.x > -1.3f) {
+            passedPlayer = false;
+            scoreGiven = false;
+        } else {
+            passedPlayer = true;
+        }
+
+        if (passedPlayer && !scoreGiven) {
+            GameController.gameScore++;
+            scoreGiven = true;
+            jumpCompletedAudio.Play();
+        }
 
         transform.Translate(Vector3.left * moveSpeed / 100f * Time.timeScale);
 
         if (transform.position.x <= -8f) {
             enemyPool.AddGameObject(gameObject);
+        }
+
+        if (GameController.isPaused) {
+            enemyAnimator.updateMode = AnimatorUpdateMode.Normal;
+        } else {
+            enemyAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         }
 
         enemyAnimator.SetBool("isGround",isGround);

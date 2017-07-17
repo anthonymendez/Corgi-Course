@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour {
     bool isGround;
     Rigidbody2D physicsBody;
     Animator playerAnimator;
+    AudioSource jumpAudio;
 
 	// Use this for initialization
 	void Start () {
         physicsBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        jumpAudio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
         bool jumpButton = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
         if (GameController.inGame && !GameController.isPaused && isGround && jumpButton) {
             physicsBody.AddForce(Vector3.up * jumpPower * physicsBody.gravityScale * 100f);
+            jumpAudio.Play();
         }
 
         bool pauseButton = Input.GetKeyDown(KeyCode.Escape);
@@ -41,13 +44,17 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetBool("isDead", GameController.isDead);
     }
 
+    void FixedUpdate() {
+        
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isGround = true;
         }
 
         if (collision.gameObject.CompareTag("Enemy")) {
-            GameController.isDead = false;
+            GameController.isDead = true;
         }
     }
 

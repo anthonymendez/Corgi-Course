@@ -17,7 +17,7 @@ public class GameObjectPool : MonoBehaviour {
         if (pool.Count > 0) {
             GameObject GObj = pool[0];
             GObj.SetActive(true);
-            transform.parent = parentTransform;
+            GObj.transform.parent = parentTransform;
             pool.RemoveAt(0);
             return GObj;
         } else {

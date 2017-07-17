@@ -6,14 +6,12 @@ public class IgnorePlayer : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        Collider2D playerCollider = GameObject.FindWithTag("Player").GetComponent<Collider2D>();
+        /*Collider2D playerCollider = GameObject.FindWithTag("Player").GetComponent<Collider2D>();
         Collider2D thisCollider = GetComponent<EdgeCollider2D>();
-        Physics2D.IgnoreCollision(playerCollider,thisCollider);
+        Physics2D.IgnoreCollision(playerCollider,thisCollider);*/
 	}
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")){
-
-        }
+    void Update() {
+        transform.Translate(Vector3.left * 6f / 100f * Time.timeScale);
     }
 }
