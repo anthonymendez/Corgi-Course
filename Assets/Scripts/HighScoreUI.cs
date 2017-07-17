@@ -16,16 +16,15 @@ public class HighScoreUI : MonoBehaviour {
 	}
 
 	// Called when enabled
-	void OnEnable () {
+	void Update () {
 
         if(GameController.gameScore > highScore) {
             highScore = GameController.gameScore;
-            thisText.text = highScore + "";
-            PlayerPrefs.SetInt("HighScore",highScore);
-            newHighScore.gameObject.SetActive(true);
+            thisText.text = GameController.gameScore + "";
+            PlayerPrefs.SetInt("HighScore", GameController.gameScore);
         } else {
-            newHighScore.gameObject.SetActive(false);
+            thisText.text = highScore + "";
         }
 
-	}
+    }
 }
