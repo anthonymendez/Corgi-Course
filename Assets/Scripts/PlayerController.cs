@@ -12,13 +12,15 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D physicsBody;
     Animator playerAnimator;
     AudioSource jumpAudio;
+    AudioSource hitAudio;
 
 	// Use this for initialization
 	void Start () {
         physicsBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        jumpAudio = GetComponent<AudioSource>();
-	}
+        jumpAudio = GetComponents<AudioSource>()[0];
+        hitAudio = GetComponents<AudioSource>()[1];
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (collision.gameObject.CompareTag("Enemy")) {
+            hitAudio.Play();
             GameController.isDead = true;
         }
     }

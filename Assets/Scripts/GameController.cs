@@ -80,6 +80,9 @@ public class GameController : MonoBehaviour {
     }
 
     public void MainMenu() {
+        isPaused = false;
+        inGame = false;
+        isDead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
