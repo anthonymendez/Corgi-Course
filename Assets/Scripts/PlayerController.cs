@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (collision.gameObject.CompareTag("Enemy")) {
-            GameController.isDead = true;
+            GameController.isDead = false;
         }
     }
 

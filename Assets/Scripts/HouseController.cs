@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundController : MonoBehaviour {
+public class HouseController : MonoBehaviour {
 
     public float moveSpeed;
 
-    public Sprite[] roadTypes;
+    public Sprite[] houseTypes;
 
     SpriteRenderer thisSR;
 
@@ -16,12 +16,12 @@ public class GroundController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         transform.Translate(Vector3.left * moveSpeed / 100f * Time.timeScale);
 
-        if (transform.position.x <= -10f) {
-            transform.position = new Vector3(transform.position.x+(2*12.01f), transform.position.y, transform.position.z);
-            thisSR.sprite = roadTypes[(int)Random.Range(0f, roadTypes.Length)];
+        if (transform.localPosition.x <= -2f) {
+            transform.localPosition = new Vector3(transform.localPosition.x + (4 * 1.0667f), transform.localPosition.y, transform.localPosition.z);
+            thisSR.sprite = houseTypes[(int)Random.Range(0f, houseTypes.Length)];
         }
     }
 }

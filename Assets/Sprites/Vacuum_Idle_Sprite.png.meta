@@ -1,17 +1,11 @@
 fileFormatVersion: 2
-guid: 0c2934b8cbfa5d44480038adbd871da0
-timeCreated: 1500247519
+guid: 7adc5365213483141ab7a1681ba471f2
+timeCreated: 1500246517
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jump_Sprite_0
-    21300002: Jump_Sprite_1
-    21300004: Jump_Sprite_2
-    21300006: Jump_Sprite_3
-    21300008: Jump_Sprite_4
-    21300010: Jump_Sprite_5
-    21300012: Jump_Sprite_6
-    21300014: Jump_Sprite_7
+    21300000: Vacuum_Idle_Sprite_0
+    21300002: Vacuum_Idle_Sprite_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -102,104 +96,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump_Sprite_0
+      name: Vacuum_Idle_Sprite_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 2
         y: 0
-        width: 51
-        height: 52
+        width: 38
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Jump_Sprite_1
+      name: Vacuum_Idle_Sprite_1
       rect:
         serializedVersion: 2
-        x: 69
+        x: 45
         y: 0
-        width: 51
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_2
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 0
-        width: 51
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_3
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 0
-        width: 53
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_4
-      rect:
-        serializedVersion: 2
-        x: 261
-        y: 0
-        width: 55
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_5
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 0
-        width: 56
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_6
-      rect:
-        serializedVersion: 2
-        x: 379
-        y: 0
-        width: 58
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Jump_Sprite_7
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 0
-        width: 56
-        height: 59
+        width: 38
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

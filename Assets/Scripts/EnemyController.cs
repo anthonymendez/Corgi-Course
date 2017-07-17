@@ -13,13 +13,14 @@ public class EnemyController : MonoBehaviour {
     bool isGround;
     Rigidbody2D physicsBody;
     float currentDelayBetweenJumps;
-
+    Animator enemyAnimator;
     Transform temp;
 
     // Use this for initialization
     void Start() {
         physicsBody = GetComponent<Rigidbody2D>();
         currentDelayBetweenJumps = 0;
+        enemyAnimator = GetComponent<Animator>();
         enemyPool = GameObject.FindWithTag("EnemyPool").GetComponent<GameObjectPool>();
     }
 
@@ -38,6 +39,8 @@ public class EnemyController : MonoBehaviour {
         if (transform.position.x <= -8f) {
             enemyPool.AddGameObject(gameObject);
         }
+
+        enemyAnimator.SetBool("isGround",isGround);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

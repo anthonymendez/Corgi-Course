@@ -9,6 +9,7 @@ TagManager:
   - EnemyPool
   - ActiveEnemy
   - Background
+  - Jumped
   layers:
   - Default
   - TransparentFX
