@@ -1338,24 +1338,13 @@ MonoBehaviour:
   m_FillRect: {fileID: 647798790}
   m_HandleRect: {fileID: 1578406340}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -100
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 24100000, guid: 9b756a3177ca5f94bb91a4a6328d2bb3, type: 2}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &591880283
@@ -1369,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c683722c76e1f4097e474e137add1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  sfxMixer: {fileID: 24100000, guid: 9b756a3177ca5f94bb91a4a6328d2bb3, type: 2}
 --- !u!1 &619513845
 GameObject:
   m_ObjectHideFlags: 0
