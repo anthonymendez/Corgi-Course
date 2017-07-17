@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool jumpButton = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
-        if (GameController.inGame && !GameController.isPaused && isGround && jumpButton) {
+        if (GameController.inGame && !GameController.isPaused && !GameController.isDead && isGround && jumpButton) {
             physicsBody.AddForce(Vector3.up * jumpPower * physicsBody.gravityScale * 100f);
             jumpAudio.Play();
         }
