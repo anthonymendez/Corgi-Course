@@ -12,6 +12,7 @@ public class MUSICSlider : MonoBehaviour {
     void Start() {
         musicSlider = GetComponent<Slider>();
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        SetVolume(PlayerPrefs.GetFloat("MusicVolume"));
         musicSlider.onValueChanged.AddListener(SetVolume);
     }
 

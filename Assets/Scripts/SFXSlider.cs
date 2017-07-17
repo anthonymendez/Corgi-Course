@@ -12,6 +12,7 @@ public class SFXSlider : MonoBehaviour {
     void Start() {
         sfxSlider = GetComponent<Slider>();
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        SetVolume(PlayerPrefs.GetFloat("SFXVolume"));
         sfxSlider.onValueChanged.AddListener(SetVolume);
     }
 
